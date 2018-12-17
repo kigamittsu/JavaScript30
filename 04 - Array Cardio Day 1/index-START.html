@@ -86,7 +86,14 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
-
+    console.log(data.reduce((accum, value, index, collection) => {
+      if (accum.hasOwnProperty(value)) {
+        accum[value] += 1;
+      } else {
+        accum[value] = 1;
+      }
+      return accum;
+    }, {}));
   </script>
 </body>
 
